@@ -146,7 +146,7 @@ footer p {
 }
 
 .characters > div p:hover {
-  background: #fff6e6;
+  background: var(--Gold, #b99049);
 }
 
 p.Griffondor {
