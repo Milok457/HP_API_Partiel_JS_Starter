@@ -42,4 +42,23 @@ for (let i = 0; i < 12; i++) {
     charDiv.appendChild(name);
     personnages.appendChild(charDiv);
 }
+
+//tri selon la maison
+const houseElements = document.querySelectorAll('.houses div img');
+console.log(houseElements);
+houseElements.forEach(houseElement => {
+    houseElement.addEventListener('click', () => {
+        const selectedHouse = houseElement.alt;
+        console.log("Maison sélectionnée :", selectedHouse); // Debug
+        const characterCards = document.querySelectorAll('.character-card');
+        characterCards.forEach(card => {
+            if (selectedHouse === "All" || card.classList.contains(selectedHouse)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
 });
