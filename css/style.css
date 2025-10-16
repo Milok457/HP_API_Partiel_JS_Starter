@@ -145,6 +145,42 @@ footer p {
   color: var(--Gold, #b99049);
 }
 
+.characters > div p:hover {
+  background: #fff6e6;
+}
+
+p.Griffondor {
+  color: var(--red, #b71713);
+}
+
+p.Griffondor img {
+  border: 8px solid var(--red, #b71713);
+}
+
+p.Serpentard {
+  color: var(--green, #124b10);
+}
+
+p.Serpentard img {
+  border: 8px solid var(--green, #124b10);
+}
+
+p.Pouffesouffle {
+  color: var(--yellow, #e1b50c);
+}
+
+p.Pouffesouffle img {
+  border: 8px solid var(--yellow, #e1b50c);
+}
+
+p.Serredaigle {
+  color: var(--blue, #078cb1);
+}
+
+p.Serredaigle img {
+  border: 8px solid var(--blue, #078cb1);
+}
+
 /* PAGE PERSO */
 .page_perso h3 {
   padding: 50px 50px 0 50px;
