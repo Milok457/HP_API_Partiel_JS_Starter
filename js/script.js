@@ -33,13 +33,16 @@ for (let i = 0; i < 12; i++) {
     img.style.border = `8px solid ${color}`;
 
     // Nom du personnage (en dessous de l'image)
-    const name = document.createElement("p");
-    name.textContent = personnage.name;
-    name.style.color = color;
+    const link = document.createElement("a");
+    link.textContent = personnage.name;
+    link.href = `details.html?id=${personnage.id}`;
+    link.style.color = color;
+    const nameWrapper = document.createElement("p");
+    nameWrapper.appendChild(link);
 
     // Assemblage
     charDiv.appendChild(img);
-    charDiv.appendChild(name);
+    charDiv.appendChild(nameWrapper);
     personnages.appendChild(charDiv);
 }
 
@@ -49,7 +52,7 @@ console.log(houseElements);
 houseElements.forEach(houseElement => {
     houseElement.addEventListener('click', () => {
         const selectedHouse = houseElement.alt;
-        console.log("Maison sélectionnée :", selectedHouse); // Debug
+        console.log("Maison sélectionnée :", selectedHouse);
         const characterCards = document.querySelectorAll('.character-card');
         characterCards.forEach(card => {
             if (selectedHouse === "All" || card.classList.contains(selectedHouse)) {
