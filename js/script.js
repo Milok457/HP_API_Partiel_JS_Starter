@@ -1,27 +1,41 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
-const data = await fetch("https://hp-api.onrender.com/api/characters").then(response => response.json());
-console.log(data);
+const dataPersonnage = await fetch("https://hp-api.onrender.com/api/characters").then(response => response.json());
+console.log(dataPersonnage);
 
 const personnages = document.querySelector(".characters");
 
+//Liste des backgrounds en fonction de la maison
+const houseColors = {
+    "Gryffindor": "var(--red, #b71713)",
+    "Hufflepuff": "var(--yellow, #e1b50c)",
+    "Ravenclaw": "var(--blue, #078cb1)",
+    "Slytherin": "var(--green, #124b10)",
+    "NoHouse": "var(--light-gray, #d3d3d3)"
+};
+
 // Afficher seulement les 12 premiers personnages
-for (let i = 0; i < 12; i++) 
-{
-     const personnage = data[i];
+for (let i = 0; i < 12; i++) {
+    const personnage = dataPersonnage[i];
+    const house = personnage.house || "NoHouse";
+
+    //Couleur de fond selon la maison
+    const color = houseColors[house];
 
     // Conteneur principal du personnage
     const charDiv = document.createElement("div");
-    charDiv.className = "character-card " + (personnage.house || "NoHouse");
+    charDiv.className = "character-card " + house;
 
     // Image du personnage
     const img = document.createElement("img");
-    img.src = personnage.image || "./images/characters/default.png";
+    img.src = personnage.image;
     img.alt = personnage.name;
+    img.style.border = `8px solid ${color}`;
 
     // Nom du personnage (en dessous de l'image)
     const name = document.createElement("p");
     name.textContent = personnage.name;
+    name.style.color = color;
 
     // Assemblage
     charDiv.appendChild(img);

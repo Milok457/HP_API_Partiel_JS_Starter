@@ -145,10 +145,7 @@ footer p {
   color: var(--Gold, #b99049);
 }
 
-.characters > div p:hover {
-  background: var(--Gold, #b99049);
-}
-
+/*
 p.Griffondor {
   color: var(--red, #b71713);
 }
@@ -180,6 +177,7 @@ p.Serredaigle {
 p.Serredaigle img {
   border: 8px solid var(--blue, #078cb1);
 }
+*/
 
 /* PAGE PERSO */
 .page_perso h3 {
